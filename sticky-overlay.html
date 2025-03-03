@@ -6,13 +6,15 @@
     <title>Scrollama: Sticky Overlay Example</title>
     <meta name="description" content="Scrollama: Sticky Overlay Example" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+   
     <style>
       #scrolly {
         position: relative;
         background-color: #f3f3f3;
         padding: 1rem;
       }
+
 
       article {
         position: relative;
@@ -21,22 +23,60 @@
         margin: 0 auto;
       }
 
-      .sticky-thing {
+      /* Video Section */
+      .video-section {
+        position: relative;
+        height: 100vh; /* Full screen height */
+        width: 100%; /* Full width */
+      }
+
+      #video {
+        position: fixed; /* Position it absolutely in the video section */
+        top: 0;
+        left: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        object-fit: cover; /* Make sure the video covers the area without stretching */
+        z-index: -1; /* Ensure it stays behind the content */
+      }
+
+      .sticky-thing-photo1 {
         position: -webkit-sticky;
         position: sticky;
         left: 0;
         width: 100%;
         margin: 0;
-        background-color: #8a8a8a;
+        background: url(images/MuralPics-04.jpg);
+        background-size: cover;
+        background-position: center center;
         z-index: 0;
-        top: 12.5vh;
-        height: 75vh;
+        top: .5vh;
+        height: 110vh;
         /* Center everything inside */
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
+      .sticky-thing-photo2 {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        background: url(images/MuralPics-14.jpg);
+        background-size: cover;
+        background-position: center center;
+        z-index: 0;
+        top: .5vh;
+        height: 110vh;
+        /* Center everything inside */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      
       .sticky-thing p {
         font-size: 8rem;
         font-weight: 900;
@@ -49,8 +89,30 @@
         background-color: rgba(0, 0, 0, 0.1);
       }
 
+      .step1 {
+        margin: 0 auto 2rem auto;
+        color: #fff;
+        background: url(images/MuralPics-10.jpg);
+        background-position: center center;
+        width: 100%
+      }
+
+      .step2 {
+        margin: 0 auto 2rem auto;
+        color: #fff;
+        background: url(images/MuralPics-10.jpg);
+        background-position: center center
+      }
+
+      .step3 {
+        margin: 0 auto 2rem auto;
+        color: #fff;
+        background: url(images/MuralPics-10.jpg);
+        background-position: center center
+      }
+
       .step:last-child {
-        margin-bottom: 0;
+        margin-bottom: 30vh;
       }
 
       .step.is-active p {
@@ -63,58 +125,70 @@
         padding: 1rem;
         font-size: 1.5rem;
         background-color: #3b3b3b;
+        
       }
     </style>
   </head>
 
   <body>
-    <main>
-      <nav>
-        <a href="https://github.com/russellgoldenberg/scrollama">scrollama.js</a>
-        <div class="nav__examples">
-          <p>Examples:</p>
-          <a href="basic.html">Basic</a>
-          <a href="progress.html">Progress</a>
-          <a href="sticky-side.html">Sticky Side</a>
-          <a href="sticky-overlay.html">Sticky Overlay</a>
-        </div>
-      </nav>
-      <section id="intro">
-        <h1 class="intro__hed">Sticky Overlay Example</h1>
-        <p class="intro__dek">
-          Start scrolling to see how it works.
-        </p>
-      </section>
+    <!-- Video Section: Full Screen Video at the Top -->
+    <section class="video-section">
+      <video id="video" autoplay muted loop>
+        <source src="images/Mural Walk.mp4" type="video/mp4">
+      </video>
+    </section>
+  
 
       <section id="scrolly">
-        <div class="sticky-thing">
+        <div class="sticky-thing-photo1">
           <p>0</p>
         </div>
 
         <article>
-          <div class="step" data-step="1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="step" data-step="">
+            <p>“I’ve been doing this for, I don’t know, 50 years or more. And, unfortunately, these issues don’t seem to go away,” said Juana Alicia, a long-time artist and activist within the Chicano Art Movement. Her most famous pieces include: Las Lechugueras, Ceasefire/Alto Al Fuego and MAESTRAPEACE.
+              .</p>
           </div>
-          <div class="step" data-step="2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="step" data-step="">
+            <p>Alicia, whose murals can be seen in California, Pennsylvania, Nicaragua and Mexico – where she is now located – often draws inspiration from current events. By working through intersectional lenses such as decolonization, feminism and indigenous identity, Alicia sees her art as a way to confront issues within the communities that surround her.
+            </p>
           </div>
-          <div class="step" data-step="3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="step" data-step="">
+            <p>“We have to spend our energy carefully,” said Alicia. “For me, art – my artwork – is the way that I can deal with the political repression that we’ve suffered throughout the history of the United States – against women, against people of color, against immigrants, against non-binary people, against gay people, against disabled people.”</p>
           </div>
-          <div class="step" data-step="4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
         </article>
       </section>
 
-      <section id="outro"></section>
+      <section id="scrolly">
+        <div class="sticky-thing-photo2">
+          <p>0</p>
+        </div>
+
+        <article>
+          <div class="step1" data-step="">
+            <img class="scroll-image" src="images/MuralPics-15.jpg">
+          </div>
+          <div class="step2" data-step="">
+            <img class="scroll-image" src="images/MuralPics-12.jpg">
+          </div>
+          <div class="step3" data-step="">
+            <img class="scroll-image" src="images/MuralPics-10.jpg">
+          </div>
+          </div>
+        </article>
+      </section>
+
+
+      <section id="outro">
+
+      </section>
     </main>
 
     <!-- <div class='debug'></div> -->
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
     <script>
-      // using d3 for convenience
       var main = document.querySelector("main");
       var scrolly = main.querySelector("#scrolly");
       var sticky = scrolly.querySelector(".sticky-thing");

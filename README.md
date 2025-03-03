@@ -1,3 +1,1 @@
-Easy-peasy non-D3 examples of [scrollama.js](https://github.com/russellgoldenberg/scrollama), pared down from the original documentation examples.
-
-Take a peek at https://jsoma.github.io/simplified-scrollama-scrollytelling/
+Eliza only edited the CSS file and sticky overlay HTML file. Copy these two files only!
